@@ -18,7 +18,7 @@ var routes = require('./routes');
 
 var app = express();
 
-MongoClient.connect('mongodb://localhost:27017/blog', function (err, db) {
+MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog', function (err, db) {
     "use strict";
     if (err) throw err;
 
