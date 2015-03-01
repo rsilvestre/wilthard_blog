@@ -60,7 +60,7 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
         },
         secret: 'keyboard cat is a small one',
         name: "tiny_cookie",
-        store: sessionStore.createSessionStore(process.env.REDISCLOUD_URL || {
+        store: sessionStore.createSessionStore(process.env.REDISCLOUD_URL?{url:process.env.REDISCLOUD_URL}: {
             type: 'redis',
             host: 'localhost',         // optional
             port: 6379,                // optional
