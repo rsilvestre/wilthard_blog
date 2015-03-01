@@ -13,6 +13,8 @@ var sessionStore = require('sessionstore');
 var genUuid = require('./helper/genUuid.js');
 var swig = require('swig');
 var extras = require('swig-extras');
+var url = require('url');
+var redis = require('redis');
 
 var routes = require('./routes');
 
@@ -21,6 +23,12 @@ var app = express();
 MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog', function (err, db) {
     "use strict";
     if (err) throw err;
+
+    var redisURL = url.parse(process.env.REDISCLOUD_URL || 'redis://localhost:6379');
+    var client = redis.createClient(redisURL.port, redisURL.hostname, {no_ready_check: true});
+    if (redisURL.auth) {
+        client.auth(redisURL.auth.split(":")[1]);
+    }
 
     // view engine setup
     app.set('views', path.join(__dirname, 'views'));
@@ -52,7 +60,7 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
         },
         secret: 'keyboard cat is a small one',
         name: "tiny_cookie",
-        store: sessionStore.createSessionStore({
+        store: sessionStore.createSessionStore(process.env.REDISCLOUD_URL || {
             type: 'redis',
             host: 'localhost',         // optional
             port: 6379,                // optional
