@@ -16,7 +16,7 @@
     <div class="article">
         <header class="onthetop">
             <div class="goleft">
-                <span class="author">By {{post['author']}}</span>
+                <span class="author">By {{ post['fullauthor']|default(post['author']) }}</span>
                 {# span.object Dans le cadre du cours de communication professionnelle #}
             </div>
             <span class="date">Posted {{post['date']|date('jS \o\f F')}}</span>

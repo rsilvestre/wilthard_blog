@@ -16,7 +16,7 @@
 
     {% for post in myposts %}
     <h2><a href="/post/{{post['permalink']}}/show">{{post['title']}}</a></h2>
-    Posted {{post['date']|date('jS \o\f F')}} <i>By {{post['author']}}</i><br>
+    Posted {{post['date']|date('jS \o\f F')}} by <i>{{ post['fullauthor']|default(post['author']) }}</i><br>
     Comments:
     <a href="/post/{{post['permalink']}}/show">{{post['comments']|length}}</a>
     <hr>
