@@ -217,8 +217,8 @@ div.article {
 	margin-bottom: 50px;
 }
 
-#container p.comment {
-	margin-bottom: 39px;
+#container h2.comment {
+	margin-bottom: 20px;
 }
 
 div.comment-container-left {
@@ -260,6 +260,12 @@ div.comment-button {
 
 /* @end */
 
+/* @group Comments */
+
+#container ul.comments {
+	margin-bottom: 30px;
+}
+
 div.comments-block {
 	margin: 0 auto;
 	margin-bottom: 20px;
@@ -279,12 +285,17 @@ div.comments-block {
 	display: block;
 	height: 0;
 	clear: both;
+	margin-bottom: 5px;
 }
 
 span.comments-author {
 	float: left;
 	margin-top: 4px;
 	margin-left: 10px;
+}
+
+span.author-name {
+	font-style: italic;
 }
 
 #container ul.comments div.comments-block form span.comments-like input {
@@ -302,6 +313,8 @@ div.comments-body {
 	margin-left: 10px;
 	margin-top: 10px;
 }
+
+/* @end */
 
 /* @end */
 
