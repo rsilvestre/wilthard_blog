@@ -29,7 +29,7 @@ module.exports = exports = function(app, db) {
       .get(contentHandler.displayEditPostPage)
       .post(contentHandler.handleEditPost);
 
-  app.route("/post/:permalink/delete")
+  app.route("/post/:permalink/delete");
 
   app.route("/post/:permalink")
       .get(contentHandler.displayPostByPermalink)

@@ -12,7 +12,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1>My Blog</h1>
+    <h1 class="main-title">My Blog</h1>
 
     {% for post in myposts %}
     <h2><a href="/post/{{post['permalink']}}/show">{{post['title']}}</a></h2>

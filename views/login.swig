@@ -18,7 +18,7 @@
 {% block content %}
   <h2>Login</h2>
   <form method="post">
-    <table>
+    <table class="login-container">
       <tr>
         <td class="label">
           Username

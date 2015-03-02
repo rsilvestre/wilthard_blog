@@ -19,7 +19,7 @@
   Already a user? <a href="/login">Login</a><p>
   <h2>Signup</h2>
   <form method="post">
-    <table>
+    <table class="signup-container">
       <tr>
         <td class="label">
           Username

@@ -8,14 +8,15 @@ html, body, h1, h2, p, ul {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-  font-size: 16px;
-  color: #000000;
-  background-color: #ffffff;
+  	font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+  	font-size: 16px;
+  	color: #000000;
+  	background-color: #ffffff;
 }
 
 a {
-  color: #00B7FF;
+	color: #00B7FF;
+  	text-decoration: none;
 }
 
 h1, h2 {
@@ -36,14 +37,102 @@ p {
 	text-align: justify;
 }
 
+input {
+	font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+	color: #000000;
+	padding: 4px 8px;
+	border-bottom-color: #b3b3b3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #b3b3b3;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #b3b3b3;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #b3b3b3;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+	border-color: silver;
+}
+
+input[type="text"], input[type="password"] {
+	font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+	font-size: 16px;
+	height: 30px;
+	
+}
+
+input[type="submit"], a.article-action-edit, #container div.article form.article-action-delete button {
+	background: #25A6E1;
+	background: -moz-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#25A6E1),color-stop(100%,#188BC0));
+	background: -webkit-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -o-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: -ms-linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	background: linear-gradient(top,#25A6E1 0%,#188BC0 100%);
+	/*filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',endColorstr='#188BC0',GradientType=0);*/
+	padding: 4px 13px;
+	color:#fff;
+	font-family:'Helvetica Neue',sans-serif;
+	font-size: 16px;
+	border-radius:4px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border:1px solid #1A87B9
+}
+
+textarea {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-color: silver;
+    font-size: 16px;
+   	padding: 8px;
+}
+
+
+/* @end */
+
+/* @group Menu */
+.main-menu {
+	
+}
+
+.main-menu:after {
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.menu-home {
+	float: left;
+}
+
+.menu-login {
+	float: right;
+}
+
 /* @end */
 
 /* @group Main header */
 
+h1.main-title {
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+
 header.onthetop {
 	display: block;
 	margin: 0 auto;
-	padding-bottom: 100px;
+	padding-bottom: 30px;
 }
 
 header.onthetop:after {
@@ -105,6 +194,86 @@ div.footnote {
 div.footnote ul {
 	padding: 0;
 	list-style-type: none;
+}
+
+/* @group article */
+
+
+
+/* @group Action */
+
+form.article-action-delete {
+	display: inline;
+}
+
+
+/* @end */
+
+div.article {
+	margin-bottom: 60px;
+}
+
+#container p.tag {
+	margin-bottom: 50px;
+}
+
+#container p.comment {
+	margin-bottom: 50px;
+}
+
+div.comment-container-left {
+	float: left;
+}
+
+div.comment-container-right {
+	float: right;
+}
+
+div.comment-container {
+	margin-bottom: 20px;
+}
+
+div.comment-block-email {
+	margin-bottom: 29px;
+}
+
+div.comment-container:after {
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+div.comment-block-name {
+	margin-bottom: 20px;
+}
+
+label.comment-label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+div.comment-button {
+	text-align: center;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group Login */
+
+table.login-container {
+	margin-bottom: 25px;
+}
+
+/* @end */
+
+/* @group Signup */
+
+table.signup-container {
+	margin-bottom: 25px;
 }
 
 /* @end */

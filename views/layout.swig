@@ -6,13 +6,14 @@
 
     {% block head %}
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script type="text/javascript" src="/javascripts/lib/require.js" data-main="/javascripts/app"></script>
     {% endblock %}
 </head>
 <body>
     <div id="menu">
         {% block menu %}{% endblock %}
     </div>
-    <div id="container">
+    <div id="container" class="col">
         {% block content %}{% endblock %}
     </div>
 </body>

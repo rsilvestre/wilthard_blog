@@ -58,7 +58,7 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
         genid: function (req) {
             return genUuid(); // use UUIDs for session IDs
         },
-        secret: 'keyboard cat is a small one',
+        secret: 'keyboa4456sdfzv15zef4sFZ48fz65df',
         name: "tiny_cookie",
         store: sessionStore.createSessionStore(process.env.REDISCLOUD_URL?{url:process.env.REDISCLOUD_URL}: {
             type: 'redis',
