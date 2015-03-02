@@ -15,6 +15,7 @@ var swig = require('swig');
 var extras = require('swig-extras');
 var url = require('url');
 var redis = require('redis');
+var moment = require('moment');
 
 var routes = require('./routes');
 
@@ -40,6 +41,9 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
             return input.length;
         }
     });
+    swig.setFilter('moment', function(input) {
+        return moment(input).fromNow();
+    })
     extras.useFilter(swig, 'markdown');
 
     // uncomment after placing your favicon in /public

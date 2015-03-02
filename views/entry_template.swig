@@ -40,21 +40,25 @@
             {% endif %}
         {% endfor %}
     </p>
-    <p class="comment">
+    <h2 class="comment">
         Comments:
-    </p>
+    </h2>
     <ul class="comments">
         {% for comment in post.comments %}
-            <form action="/like" method="POST">
-                <input type="hidden" name="permalink", value="{{post['permalink']}}">
-                <input type="hidden" name="comment_ordinal", value="{{loop.index0}}">
-                Author: {{comment['author']}}<br>
-                Likes: {{comment['num_likes']}} <input type="submit" value="Like">
-            </form>
-            <br>
-            {{comment['body']}}<br>
-            <hr>
+            <div class="comments-block">
+                <form action="/like" method="POST">
+                    <input type="hidden" name="permalink", value="{{post['permalink']}}">
+                    <input type="hidden" name="comment_ordinal", value="{{loop.index0}}">
+                    <span class="comments-author"> Author: <span class="author-name">{{comment['author']}}</span> {% if comment.date %} added <span class="change-date">{{ comment.date|moment }}</span>{% endif %}</span>
+                    <span class="comments-like"> Likes: {{comment['num_likes']}} <input type="submit" value="Like"></span>
+                </form>
+                <div class="comments-body">
+                    {{comment['body']}}
+                </div>
+            </div>
         {% endfor %}
+    </ul>
+    <div class="add-comment">
         <h3>Add a comment</h3>
         <form class="comment-form" action="/newcomment" method="POST">
             <input type="hidden" name="permalink", value="{{post['permalink']}}">
@@ -63,11 +67,11 @@
                 <div class="comment-container-left">
                     <div class="comment-block-name">
                         <label class="comment-label" for="commentName"> <span class="label-name">Name</span> (required)</label>
-                        <input type="text" id="commentName" name="commentName" size="40" value="{{comment['name']|default('')}}">
+                        <input type="text" id="commentName" name="commentName" size="40" tabindex="1" value="{{comment['name']|default('')}}">
                     </div>
                     <div class="comment-block-email">
                         <label class="comment-label" for="commentEmail"><span class="label-email">Email</span> (optional)</label>
-                        <input type="text" id="commentEmail" name="commentEmail" size="40" value="{{comment['email']|default('')}}">
+                        <input type="text" id="commentEmail" name="commentEmail" size="40" tabindex="2" value="{{comment['email']|default('')}}">
                     </div>
                     <div class="comment-button">
                         <input type="submit" value="Submit">
@@ -75,9 +79,9 @@
                 </div>
                 <div class="comment-container-right">
                     <label class="comment-label" for="commentBody">Comment</label>
-                    <textarea id="commentBody" name="commentBody" cols="42" rows="10">{{comment['body']}}</textarea>
+                    <textarea id="commentBody" name="commentBody" cols="42" rows="10" tabindex="3">{{comment['body']}}</textarea>
                 </div>
             </div>
         </form>
-    </ul>
+    </div>
 {% endblock %}

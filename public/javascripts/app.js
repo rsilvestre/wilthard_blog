@@ -10,6 +10,7 @@ require.config({
         // js/lib/jquery-1.9.0.js, relative to
         // the HTML page.
         jquery: 'lib/jquery-2.1.3',
+        moment: "lib/moment-with-locales.min",
         app: 'app'
     }
 });

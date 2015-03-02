@@ -218,7 +218,7 @@ div.article {
 }
 
 #container p.comment {
-	margin-bottom: 50px;
+	margin-bottom: 39px;
 }
 
 div.comment-container-left {
@@ -259,6 +259,49 @@ div.comment-button {
 }
 
 /* @end */
+
+div.comments-block {
+	margin: 0 auto;
+	margin-bottom: 20px;
+	border: 1px solid silver;
+	border-radius: 5px;
+	padding: 10px 0;
+}
+
+#container ul.comments div.comments-block form {
+	font-size: 14px;
+	border-bottom: 1px solid silver;
+}
+
+#container ul.comments div.comments-block form:after {
+	content: " ";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+span.comments-author {
+	float: left;
+	margin-top: 4px;
+	margin-left: 10px;
+}
+
+#container ul.comments div.comments-block form span.comments-like input {
+	font-size: 12px;
+	padding: 3px 8px;
+}
+
+span.comments-like {
+	float: right;
+	margin-right: 10px;
+}
+
+div.comments-body {
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+}
 
 /* @end */
 

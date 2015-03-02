@@ -164,7 +164,7 @@ function PostsDAO(db) {
     this.addComment = function(permalink, name, email, body, callback) {
         "use strict";
 
-        var comment = {'author': name, 'body': body};
+        var comment = {'author': name, 'body': body, 'date': new Date()};
 
         if (email != "") {
             comment['email'] = email
