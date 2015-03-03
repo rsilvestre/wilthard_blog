@@ -24,6 +24,7 @@
     "sessionstore": "^1.0.5",
     "swig": "^1.4.2",
     "swig-extras": "0.0.1",
+    "universal-analytics": "^0.3.6",
     "validator": "^3.32.0"
   }
 }

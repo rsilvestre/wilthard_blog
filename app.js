@@ -1,21 +1,21 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var MongoClient = require('mongodb').MongoClient;
-//var mongoskin = require('mongoskin');
-var multer = require('multer');
-var session = require('express-session');
-var sessionStore = require('sessionstore');
-var genUuid = require('./helper/genUuid.js');
-var swig = require('swig');
-var extras = require('swig-extras');
-var url = require('url');
-var redis = require('redis');
-var moment = require('moment');
+var express = require('express')
+  , path = require('path')
+  , favicon = require('serve-favicon')
+  , logger = require('morgan')
+  , cookieParser = require('cookie-parser')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
+  , MongoClient = require('mongodb').MongoClient
+  , multer = require('multer')
+  , session = require('express-session')
+  , sessionStore = require('sessionstore')
+  , genUuid = require('./helper/genUuid.js')
+  , swig = require('swig')
+  , extras = require('swig-extras')
+  , url = require('url')
+  , redis = require('redis')
+  , moment = require('moment')
+  , ua = require('universal-analytics');
 
 var routes = require('./routes');
 
@@ -36,6 +36,7 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
     //app.set('view engine', 'jade');
     app.engine('swig', swig.renderFile);
     app.set('view engine', 'swig');
+
     swig.setFilter('length', function(input) {
         if( Object.prototype.toString.call( input ) === '[object Array]' ) {
             return input.length;
@@ -43,8 +44,10 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
     });
     swig.setFilter('moment', function(input) {
         return moment(input).fromNow();
-    })
+    });
     extras.useFilter(swig, 'markdown');
+
+    app.use(ua.middleware('UA-60346132-1', {cookieName: '_ga'}));
 
     // uncomment after placing your favicon in /public
     //app.use(favicon(__dirname + '/public/favicon.ico'));
