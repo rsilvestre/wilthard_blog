@@ -20,6 +20,7 @@
     "morgan": "~1.5.1",
     "multer": "^0.1.6",
     "redis": "^0.12.1",
+    "robots.txt": "^1.1.0",
     "serve-favicon": "~2.2.0",
     "sessionstore": "^1.0.5",
     "swig": "^1.4.2",

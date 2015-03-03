@@ -15,7 +15,8 @@ var express = require('express')
   , url = require('url')
   , redis = require('redis')
   , moment = require('moment')
-  , ua = require('universal-analytics');
+  , ua = require('universal-analytics')
+  , robots = require('robots.txt');
 
 var routes = require('./routes');
 
@@ -49,6 +50,7 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
 
     app.use(ua.middleware('UA-60346132-1', {cookieName: '_ga'}));
 
+    //app.use(robots(__dirname + '/robots.txt'));
     // uncomment after placing your favicon in /public
     //app.use(favicon(__dirname + '/public/favicon.ico'));
     app.use(logger('dev'));
