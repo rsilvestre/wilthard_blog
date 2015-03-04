@@ -15,8 +15,7 @@ var express = require('express')
   , url = require('url')
   , redis = require('redis')
   , moment = require('moment')
-  , ua = require('universal-analytics')
-  , robots = require('robots.txt');
+  , ua = require('universal-analytics');
 
 var routes = require('./routes');
 
@@ -96,6 +95,11 @@ MongoClient.connect(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/blog'
         }
     }));
     app.use(express.static(path.join(__dirname, 'public')));
+
+    app.use(function(req, res, next){
+        req.visitor.pageview(req.originalUrl).send();
+        next();
+    });
 
     // Application routes
     routes(app, db);
