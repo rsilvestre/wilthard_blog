@@ -14,3 +14,17 @@ The code is Heroky ready. Just push it and configure some variable:
 - STRONGLOOP_KEY
 
 The code is using [Express js](http://expressjs.com) and specialy [Loopback](http://loopback.io)
+
+If you prefer a great Node js blog engine, I suggest you to use [Hexo](http://hexo.io)
+
+## What you need
+
+You need to use a MongoDB server and a Redis server for the session
+
+## after install
+
+You need to create an account, this blog is one account only, so after that creation you cannot create an other account anymore.
+
+## text edition
+
+The Text should be writen in Markdown only
